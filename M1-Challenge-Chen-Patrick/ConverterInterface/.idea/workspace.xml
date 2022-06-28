@@ -4,24 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a81c8d59-7c74-4389-84d2-7263ff21d6c8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../CalculatorObject/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CalculatorObject/src/test/java/com/company/CalculatorTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/company/ConverterIfTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/company/ConverterSwitchTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CustomerComposition/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CustomerComposition/src/test/java/com/company/AddressTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../CustomerComposition/src/test/java/com/company/CustomerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CalculatorObject/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CalculatorObject/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/company/ConverterApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/company/ConverterApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/company/ConverterIf.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/company/ConverterIf.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../CustomerComposition/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../CustomerComposition/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="a81c8d59-7c74-4389-84d2-7263ff21d6c8" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -54,7 +37,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit4",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit4": "",
-    "last_opened_file_path": "C:/Users/patch/Java/Module1/1.4/CalculatorWithTests"
+    "last_opened_file_path": "C:/Users/patch/Java/Patrick_Chen_Java/M1-Challenge-Chen-Patrick/CalculatorObject"
   }
 }]]></component>
   <component name="RecentsManager">
