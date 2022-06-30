@@ -112,38 +112,44 @@ public class Farmer extends Person {
         this.harvesting = harvesting;
     }
 
-    public void attack() {
-        System.out.println(this.name + " attacks!");
+    public String attack() {
+        if (this.arrested) {
+            System.out.println("Can't attack if you're arrested!");
+            return "Can't attack if you're arrested!";
+        } else {
+            System.out.println(this.name + " attacks!");
+            return this.name + " attacks!";
+        }
     }
 
-    public void run() {
+    public boolean run() {
         System.out.println(this.name + " ran away!");
-        this.running = true;
+        return this.running = true;
     }
 
-    public void stopRun() {
+    public boolean stopRun() {
         System.out.println(this.name + " stopped running.");
-        this.running = false;
+        return this.running = false;
     }
 
-    public void heal() {
+    public int heal() {
         System.out.println(this.name + " gain 10 HP.");
-        this.health = health + 10;
+        return this.health = health + 10;
     }
 
-    public void decreaseHealth() {
+    public int decreaseHealth() {
         System.out.println(this.name + " lost 10 HP.");
-        this.health = health - 10;
+        return this.health = health - 10;
     }
 
-    public void increaseStamina() {
+    public int increaseStamina() {
         System.out.println("Increased stamina!");
-        this.stamina = stamina + 10;
+        return this.stamina = stamina + 10;
     }
 
-    public void decreaseStamina() {
+    public int decreaseStamina() {
         System.out.println("Decreased stamina!");
-        this.stamina = stamina - 10;
+        return this.stamina = stamina - 10;
     }
 
     @Override

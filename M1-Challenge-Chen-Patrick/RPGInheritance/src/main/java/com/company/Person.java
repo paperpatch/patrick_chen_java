@@ -22,28 +22,9 @@ public class Person {
         this.health = health;
     }
 
-    public void attack() {
-        System.out.println(this.name + " attacks!");
-    }
-
-    public void run() {
-        System.out.println(this.name + " ran away!");
-    }
-
-    public void heal() {
-        System.out.println(this.name + " healed.");
-    }
-
-    public void decreaseHealth() {
+    public int decreaseHealth() {
         System.out.println(this.name + " lost HP.");
-    }
-
-    public void increaseStamina() {
-        System.out.println("Increased stamina!");
-    }
-
-    public void decreaseStamina() {
-        System.out.println("Decreased stamina!");
+        return 0;
     }
 
     @Override
