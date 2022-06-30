@@ -24,6 +24,46 @@ public class Constable extends Person {
         this.arrested = false;
     }
 
+    public String attack() {
+        if (this.arrested) {
+            System.out.println("Can't attack if you're arrested!");
+            return "Can't attack if you're arrested!";
+        } else {
+            System.out.println(this.name + " attacks!");
+            return this.name + " attacks!";
+        }
+    }
+
+    public boolean run() {
+        System.out.println(this.name + " ran away!");
+        return this.running = true;
+    }
+
+    public boolean stopRun() {
+        System.out.println(this.name + " stopped running.");
+        return this.running = false;
+    }
+
+    public int heal() {
+        System.out.println(this.name + " gain 10 HP.");
+        return this.health = health + 10;
+    }
+
+    public int decreaseHealth() {
+        System.out.println(this.name + " lost 10 HP.");
+        return this.health = health - 10;
+    }
+
+    public int increaseStamina() {
+        System.out.println("Increased stamina!");
+        return this.stamina = stamina + 10;
+    }
+
+    public int decreaseStamina() {
+        System.out.println("Decreased stamina!");
+        return this.stamina = stamina - 10;
+    }
+
     @Override
     public String getName() {
         return name;

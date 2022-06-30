@@ -8,7 +8,6 @@ import static org.junit.Assert.*;
 public class FarmerTest {
 
     private Farmer farmer;
-    private Constable constable;
 
     @Before
     public void setUp() {
@@ -22,15 +21,6 @@ public class FarmerTest {
         farmer.setArrested(false);
         farmer.setPlowing(false);
         farmer.setHarvesting(false);
-
-        constable = new Constable("Mike");
-        constable.setStrength(60);
-        constable.setHealth(100);
-        constable.setStamina(60);
-        constable.setSpeed(20);
-        constable.setAttackPower(5);
-        constable.setRunning(false);
-        constable.setArrested(false);
     }
 
     @Test
