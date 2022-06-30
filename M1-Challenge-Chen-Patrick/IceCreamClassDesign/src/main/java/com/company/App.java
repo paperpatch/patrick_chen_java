@@ -20,5 +20,10 @@ public class App {
         iceCream2.setQuantity(1000);
 
         System.out.println("We sell " + iceCream2.getFlavor() + " ice creams at $" + iceCream2.getPrice() + " per cone. We can sell about " + iceCream2.getQuantity() + " ice creams per day.");
+
+        System.out.println("-------------------------------------");
+
+        iceCream2.sell(432);
+        System.out.println("There are " + iceCream2.getQuantity() + " left in the inventory.");
     }
 }
