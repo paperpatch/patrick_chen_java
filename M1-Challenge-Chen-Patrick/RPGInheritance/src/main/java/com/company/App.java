@@ -10,7 +10,6 @@ public class App {
         System.out.println(joe);
         System.out.println(mike);
         System.out.println(david);
-
         
     }
 }

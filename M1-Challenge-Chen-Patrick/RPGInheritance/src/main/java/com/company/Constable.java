@@ -1,5 +1,7 @@
 package com.company;
 
+import java.util.Objects;
+
 public class Constable extends Person {
 
     private String name;
@@ -88,5 +90,33 @@ public class Constable extends Person {
 
     public void setArrested(boolean arrested) {
         this.arrested = arrested;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        if (!super.equals(o)) return false;
+        Constable constable = (Constable) o;
+        return strength == constable.strength && health == constable.health && stamina == constable.stamina && speed == constable.speed && attackPower == constable.attackPower && running == constable.running && arrested == constable.arrested && Objects.equals(name, constable.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(super.hashCode(), name, strength, health, stamina, speed, attackPower, running, arrested);
+    }
+
+    @Override
+    public String toString() {
+        return "Constable{" +
+                "name='" + name + '\'' +
+                ", strength=" + strength +
+                ", health=" + health +
+                ", stamina=" + stamina +
+                ", speed=" + speed +
+                ", attackPower=" + attackPower +
+                ", running=" + running +
+                ", arrested=" + arrested +
+                '}';
     }
 }
