@@ -26,6 +26,42 @@ public class Warrior extends Person {
         this.arrested = false;
     }
 
+    public int attacks() {
+        System.out.println("this.name attacks! Stamina drained.");
+        return this.stamina - 10;
+    }
+
+    public boolean run() {
+        System.out.println(this.name + " ran away!");
+        this.stamina = stamina - 10;
+        return this.running = true;
+    }
+
+    public boolean stopRun() {
+        System.out.println(this.name + " stopped running.");
+        return this.running = false;
+    }
+
+    public int heal() {
+        System.out.println(this.name + " gain 10 HP.");
+        return this.health = health + 10;
+    }
+
+    public int decreaseHealth() {
+        System.out.println(this.name + " lost 10 HP.");
+        return this.health = health - 10;
+    }
+
+    public int increaseStamina() {
+        System.out.println("Increased stamina!");
+        return this.stamina = stamina + 10;
+    }
+
+    public int decreaseStamina() {
+        System.out.println("Decreased stamina!");
+        return this.stamina = stamina - 10;
+    }
+
     @Override
     public String getName() {
         return name;
