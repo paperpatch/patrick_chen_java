@@ -11,7 +11,8 @@ public class FarmerTest {
 
     @Before
     public void setUp() {
-        farmer = new Farmer("Joe");
+        farmer = new Farmer();
+        farmer.setName("Joe");
         farmer.setStrength(75);
         farmer.setHealth(100);
         farmer.setStamina(75);
@@ -24,39 +25,27 @@ public class FarmerTest {
     }
 
     @Test
-    public void shouldDecreaseHealth() {
-        int expectedOutput = 90;
-        int actualOutput = farmer.decreaseHealth();
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
-    public void shouldNotBeAbleToAttackIfArrested() {
-        farmer.setArrested(true);
-        String expectedOutput = "Can't attack if you're arrested!";
-        String actualOutput = farmer.attack();
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
-    public void shouldIncreaseStamina() {
-        int expectedOutput = 85;
-        int actualOutput = farmer.increaseStamina();
-        assertEquals(expectedOutput, actualOutput);
-    }
-
-    @Test
-    public void plowingShouldBeTrueAfterStarting() {
+    public void plowingStatusShouldBeTrueAfterPlowing() {
+        farmer.plowing();
         boolean expectedOutput = true;
-        boolean actualOutput = farmer.plowing();
+        boolean actualOutput = farmer.isPlowing();
         assertEquals(expectedOutput, actualOutput);
     }
 
     @Test
-    public void plowingShouldBeFalseAfterPlowingAndStopping() {
-        farmer.plowing(); // turns plowing to true;
+    public void plowingStatusShouldBeFalseAfterPlowingAndStopping() {
+        farmer.plowing();
+        farmer.stopPlowing();
         boolean expectedOutput = false;
-        boolean actualOutput = farmer.stopPlowing();
+        boolean actualOutput = farmer.isPlowing();
+        assertEquals(expectedOutput, actualOutput);
+    }
+
+    @Test
+    public void shouldLoseStaminaWhenPlowing() {
+        farmer.plowing();
+        int expectedOutput = 65;
+        int actualOutput = farmer.getStamina();
         assertEquals(expectedOutput, actualOutput);
     }
 }

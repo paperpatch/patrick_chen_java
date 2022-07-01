@@ -5,10 +5,8 @@ public class Customer {
     private String lastName;
     private String email;
     private int phoneNumber;
-
-    private Address homeAddress;
+    private Address shippingAddress;
     private Address billingAddress;
-
     private boolean rewardsMember;
 
     public String getFirstName() {
@@ -43,12 +41,12 @@ public class Customer {
         this.phoneNumber = phoneNumber;
     }
 
-    public Address getHomeAddress() {
-        return homeAddress;
+    public Address getShippingAddress() {
+        return shippingAddress;
     }
 
-    public void setHomeAddress(Address homeAddress) {
-        this.homeAddress = homeAddress;
+    public void setShippingAddress(Address shippingAddress) {
+        this.shippingAddress = shippingAddress;
     }
 
     public Address getBillingAddress() {
@@ -74,7 +72,7 @@ public class Customer {
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber=" + phoneNumber +
-                ", homeAddress=" + homeAddress +
+                ", homeAddress=" + shippingAddress +
                 ", billingAddress=" + billingAddress +
                 ", rewardsMember=" + rewardsMember +
                 '}';

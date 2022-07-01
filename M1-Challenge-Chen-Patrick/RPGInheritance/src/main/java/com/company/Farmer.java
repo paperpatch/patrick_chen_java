@@ -4,19 +4,10 @@ import java.util.Objects;
 
 public class Farmer extends Person {
 
-    private String name;
-    private int strength;
-    private int health;
-    private int stamina;
-    private int speed;
-    private int attackPower;
-    private boolean running;
-    private boolean arrested;
     private boolean plowing;
     private boolean harvesting;
 
-    public Farmer(String name) {
-        this.name = name;
+    public Farmer() {
         this.strength = 75;
         this.health = 100;
         this.stamina = 75;
@@ -26,6 +17,17 @@ public class Farmer extends Person {
         this.arrested = false;
         this.plowing = false;
         this.harvesting = false;
+    }
+
+    public void plowing() {
+        this.setPlowing(true);
+        this.setStamina(this.getStamina() - 10);
+        System.out.println(this.name + " is plowing the field.");
+    }
+
+    public void stopPlowing() {
+        this.setPlowing(false);
+        System.out.println(this.name + " stopped plowing.");
     }
 
     @Override
@@ -110,66 +112,6 @@ public class Farmer extends Person {
 
     public void setHarvesting(boolean harvesting) {
         this.harvesting = harvesting;
-    }
-
-    public String attack() {
-        if (this.arrested) {
-            System.out.println("Can't attack if you're arrested!");
-            return "Can't attack if you're arrested!";
-        } else {
-            System.out.println(this.name + " attacks!");
-            return this.name + " attacks!";
-        }
-    }
-
-    public boolean plowing() {
-        System.out.println(this.name + " is plowing the field.");
-        return this.plowing = true;
-    }
-
-    public boolean stopPlowing() {
-        System.out.println(this.name + " stopped plowing.");
-        return this.plowing = false;
-    }
-
-    public boolean harvesting() {
-        System.out.println(this.name + " is harvesting the field.");
-        return this.harvesting = true;
-    }
-
-    public boolean stopHarvesting() {
-        System.out.println(this.name + " stopped harvesting the field.");
-        return this.harvesting = false;
-    }
-
-    public boolean run() {
-        System.out.println(this.name + " ran away!");
-        return this.running = true;
-    }
-
-    public boolean stopRun() {
-        System.out.println(this.name + " stopped running.");
-        return this.running = false;
-    }
-
-    public int heal() {
-        System.out.println(this.name + " gain 10 HP.");
-        return this.health = health + 10;
-    }
-
-    public int decreaseHealth() {
-        System.out.println(this.name + " lost 10 HP.");
-        return this.health = health - 10;
-    }
-
-    public int increaseStamina() {
-        System.out.println("Increased stamina!");
-        return this.stamina = stamina + 10;
-    }
-
-    public int decreaseStamina() {
-        System.out.println("Decreased stamina!");
-        return this.stamina = stamina - 10;
     }
 
     @Override

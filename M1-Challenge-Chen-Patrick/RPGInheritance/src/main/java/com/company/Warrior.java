@@ -3,19 +3,9 @@ package com.company;
 import java.util.Objects;
 
 public class Warrior extends Person {
-
-    private String name;
-    private int strength;
-    private int health;
-    private int stamina;
-    private int speed;
-    private int attackPower;
     private int shieldStrength;
-    private boolean running;
-    private boolean arrested;
 
-    public Warrior(String name) {
-        this.name = name;
+    public Warrior() {
         this.strength = 75;
         this.health = 100;
         this.stamina = 100;
@@ -28,90 +18,9 @@ public class Warrior extends Person {
 
     public int attacks() {
         System.out.println("this.name attacks! Stamina drained.");
-        return this.stamina - 10;
-    }
-
-    public boolean run() {
-        System.out.println(this.name + " ran away!");
-        this.stamina = stamina - 10;
-        return this.running = true;
-    }
-
-    public boolean stopRun() {
-        System.out.println(this.name + " stopped running.");
-        return this.running = false;
-    }
-
-    public int heal() {
-        System.out.println(this.name + " gain 10 HP.");
-        return this.health = health + 10;
-    }
-
-    public int decreaseHealth() {
-        System.out.println(this.name + " lost 10 HP.");
-        return this.health = health - 10;
-    }
-
-    public int increaseStamina() {
-        System.out.println("Increased stamina!");
-        return this.stamina = stamina + 10;
-    }
-
-    public int decreaseStamina() {
-        System.out.println("Decreased stamina!");
-        return this.stamina = stamina - 10;
-    }
-
-    @Override
-    public String getName() {
-        return name;
-    }
-
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public int getStrength() {
-        return strength;
-    }
-
-    public void setStrength(int strength) {
-        this.strength = strength;
-    }
-
-    @Override
-    public int getHealth() {
-        return health;
-    }
-
-    @Override
-    public void setHealth(int health) {
-        this.health = health;
-    }
-
-    public int getStamina() {
+        int stamina = this.getStamina() - 10;
+        this.setStamina(stamina);
         return stamina;
-    }
-
-    public void setStamina(int stamina) {
-        this.stamina = stamina;
-    }
-
-    public int getSpeed() {
-        return speed;
-    }
-
-    public void setSpeed(int speed) {
-        this.speed = speed;
-    }
-
-    public int getAttackPower() {
-        return attackPower;
-    }
-
-    public void setAttackPower(int attackPower) {
-        this.attackPower = attackPower;
     }
 
     public int getShieldStrength() {
@@ -122,48 +31,102 @@ public class Warrior extends Person {
         this.shieldStrength = shieldStrength;
     }
 
+    public Warrior(String name, int strength, int health, int stamina, int speed, int attackPower, boolean running, boolean arrested) {
+        super(name, strength, health, stamina, speed, attackPower, running, arrested);
+    }
+
+    @Override
+    public String getName() {
+        return super.getName();
+    }
+
+    @Override
+    public void setName(String name) {
+        super.setName(name);
+    }
+
+    @Override
+    public int getStrength() {
+        return super.getStrength();
+    }
+
+    @Override
+    public void setStrength(int strength) {
+        super.setStrength(strength);
+    }
+
+    @Override
+    public int getHealth() {
+        return super.getHealth();
+    }
+
+    @Override
+    public void setHealth(int health) {
+        super.setHealth(health);
+    }
+
+    @Override
+    public int getStamina() {
+        return super.getStamina();
+    }
+
+    @Override
+    public void setStamina(int stamina) {
+        super.setStamina(stamina);
+    }
+
+    @Override
+    public int getSpeed() {
+        return super.getSpeed();
+    }
+
+    @Override
+    public void setSpeed(int speed) {
+        super.setSpeed(speed);
+    }
+
+    @Override
+    public int getAttackPower() {
+        return super.getAttackPower();
+    }
+
+    @Override
+    public void setAttackPower(int attackPower) {
+        super.setAttackPower(attackPower);
+    }
+
+    @Override
     public boolean isRunning() {
-        return running;
+        return super.isRunning();
     }
 
+    @Override
     public void setRunning(boolean running) {
-        this.running = running;
+        super.setRunning(running);
     }
 
+    @Override
     public boolean isArrested() {
-        return arrested;
+        return super.isArrested();
     }
 
+    @Override
     public void setArrested(boolean arrested) {
-        this.arrested = arrested;
+        super.setArrested(arrested);
     }
 
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        if (!super.equals(o)) return false;
-        Warrior warrior = (Warrior) o;
-        return strength == warrior.strength && health == warrior.health && stamina == warrior.stamina && speed == warrior.speed && attackPower == warrior.attackPower && shieldStrength == warrior.shieldStrength && running == warrior.running && arrested == warrior.arrested && Objects.equals(name, warrior.name);
+        return super.equals(o);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(super.hashCode(), name, strength, health, stamina, speed, attackPower, shieldStrength, running, arrested);
+        return super.hashCode();
     }
 
     @Override
     public String toString() {
-        return "Warrior{" +
-                "name='" + name + '\'' +
-                ", strength=" + strength +
-                ", health=" + health +
-                ", stamina=" + stamina +
-                ", speed=" + speed +
-                ", attackPower=" + attackPower +
-                ", shieldStrength=" + shieldStrength +
-                ", running=" + running +
-                ", arrested=" + arrested +
-                '}';
+        return super.toString();
     }
 }

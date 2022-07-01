@@ -14,7 +14,7 @@ public class App {
         address1.setZipcode("06107");
         address1.setStreet1("123 street rd");
 
-        customer1.setHomeAddress(address1);
+        customer1.setShippingAddress(address1);
         customer1.setBillingAddress(address1);
 
         customer1.setRewardsMember(true);
