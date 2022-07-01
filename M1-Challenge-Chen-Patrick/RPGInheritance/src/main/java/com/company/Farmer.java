@@ -122,6 +122,26 @@ public class Farmer extends Person {
         }
     }
 
+    public boolean plowing() {
+        System.out.println(this.name + " is plowing the field.");
+        return this.plowing = true;
+    }
+
+    public boolean stopPlowing() {
+        System.out.println(this.name + " stopped plowing.");
+        return this.plowing = false;
+    }
+
+    public boolean harvesting() {
+        System.out.println(this.name + " is harvesting the field.");
+        return this.harvesting = true;
+    }
+
+    public boolean stopHarvesting() {
+        System.out.println(this.name + " stopped harvesting the field.");
+        return this.harvesting = false;
+    }
+
     public boolean run() {
         System.out.println(this.name + " ran away!");
         return this.running = true;

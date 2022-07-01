@@ -38,12 +38,25 @@ public class FarmerTest {
         assertEquals(expectedOutput, actualOutput);
     }
 
-    @Test public void shouldIncreaseStamina() {
+    @Test
+    public void shouldIncreaseStamina() {
         int expectedOutput = 85;
         int actualOutput = farmer.increaseStamina();
         assertEquals(expectedOutput, actualOutput);
     }
 
-    @
+    @Test
+    public void plowingShouldBeTrueAfterStarting() {
+        boolean expectedOutput = true;
+        boolean actualOutput = farmer.plowing();
+        assertEquals(expectedOutput, actualOutput);
+    }
 
+    @Test
+    public void plowingShouldBeFalseAfterPlowingAndStopping() {
+        farmer.plowing(); // turns plowing to true;
+        boolean expectedOutput = false;
+        boolean actualOutput = farmer.stopPlowing();
+        assertEquals(expectedOutput, actualOutput);
+    }
 }
