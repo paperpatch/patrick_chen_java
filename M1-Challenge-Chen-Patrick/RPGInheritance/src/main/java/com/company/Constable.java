@@ -21,8 +21,6 @@ public class Constable extends Person {
         System.out.println(this.getName() + " arrested the criminal " + criminal.getName() + ".");
     }
 
-
-
     @Override
     public String getName() {
         return super.getName();
