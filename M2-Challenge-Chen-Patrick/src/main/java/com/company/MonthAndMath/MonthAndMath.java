@@ -1,13 +1,13 @@
-package com.company.M2ChallengeChenPatrick;
+package com.company.MonthAndMath;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class M2ChallengeChenPatrickApplication {
+public class MonthAndMath {
 
 	public static void main(String[] args) {
-		SpringApplication.run(M2ChallengeChenPatrickApplication.class, args);
+		SpringApplication.run(MonthAndMath.class, args);
 	}
 
 }
