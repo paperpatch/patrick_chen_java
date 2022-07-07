@@ -6,6 +6,8 @@ public class RandomMonth {
     private int id;
     private String month;
 
+    public RandomMonth() {
+    }
     public RandomMonth(String month, int id) {
         this.id = id;
         this.month = month;
