@@ -5,16 +5,14 @@ import java.util.Objects;
 public class Math {
     private int operand1;
     private int operand2;
-    private String operation;
     private int answer;
 
     public Math() {
     }
 
-    public Math(int operand1, int operand2, String operation, int answer) {
+    public Math(int operand1, int operand2, int answer) {
         this.operand1 = operand1;
         this.operand2 = operand2;
-        this.operation = operation;
         this.answer = answer;
     }
 
@@ -34,14 +32,6 @@ public class Math {
         this.operand2 = operand2;
     }
 
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
-
     public int getAnswer() {
         return answer;
     }
@@ -54,21 +44,20 @@ public class Math {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Math that = (Math) o;
-        return operand1 == that.operand1 && operand2 == that.operand2 && answer == that.answer && Objects.equals(operation, that.operation);
+        Math math = (Math) o;
+        return operand1 == math.operand1 && operand2 == math.operand2 && answer == math.answer;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(operand1, operand2, operation, answer);
+        return Objects.hash(operand1, operand2, answer);
     }
 
     @Override
     public String toString() {
-        return "MathSolution{" +
+        return "Math{" +
                 "operand1=" + operand1 +
                 ", operand2=" + operand2 +
-                ", operation='" + operation + '\'' +
                 ", answer=" + answer +
                 '}';
     }

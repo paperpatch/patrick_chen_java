@@ -10,6 +10,7 @@ public class MathController {
     @RequestMapping(value="/add", method= RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Math add(@RequestBody Math math) {
+
         math.setAnswer(math.getOperand1() + math.getOperand2());
         return math;
     }
@@ -31,9 +32,6 @@ public class MathController {
     @RequestMapping(value="/divide", method= RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
     public Math divide(@RequestBody Math math) {
-        if (math.getOperand2() == 0) {
-            throw new IllegalArgumentException("Denominator cannot be zero.");
-        }
         math.setAnswer(math.getOperand1() / math.getOperand2());
         return math;
     }
