@@ -10,6 +10,10 @@ import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import static org.junit.Assert.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
@@ -35,6 +39,8 @@ public class MathControllerTest {
     public void contextLoads() {
     }
 
+    // test code originally written in Cognizant 03-we-record-store-query-parameters.
+
     @Test
     public void shouldReturnPositiveIntegersWhenAddingTwoPositiveIntegers() throws Exception {
         Math output = new Math();
@@ -50,8 +56,6 @@ public class MathControllerTest {
         input.setOperation("add");
         String inputJson = mapper.writeValueAsString(input);
 
-        System.out.println(inputJson);
-
         mockMvc.perform(
                         post("/add")                            // Perform the POST request.
                                 .content(inputJson)                           // Set the request body.
@@ -60,6 +64,25 @@ public class MathControllerTest {
                 .andDo(print())                                // Print results to console.
                 .andExpect(status().isCreated())               // ASSERT (status code is 201)
                 .andExpect(content().json(outputJson));
+    }
+
+    @Test
+    public void shouldReturn422ErrorWithInvalidRequest() throws Exception {
+        // Could not directly use string for int as Java prevents .setOperand1("String");
+        // Used Map/HashMap to work around the restriction.
+        Map<String, String> inputMap = new HashMap<>();
+        inputMap.put("operand1", "2");
+        inputMap.put("operand2", "String");
+
+        String inputJson = mapper.writeValueAsString(inputMap);
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/add")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
     }
 
 }

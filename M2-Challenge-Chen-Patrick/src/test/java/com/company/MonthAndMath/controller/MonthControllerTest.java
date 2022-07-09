@@ -13,7 +13,7 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-// originally written in the Cognizant 05-stu-month-converter and tweaked.
+// originally written in the Cognizant 05-stu-month-converter.
 @RunWith(SpringRunner.class)
 @WebMvcTest(MonthController.class)
 public class MonthControllerTest {
