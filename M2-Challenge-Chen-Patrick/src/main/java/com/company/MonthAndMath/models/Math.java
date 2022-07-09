@@ -1,4 +1,4 @@
 package com.company.MonthAndMath.models;
 
-public class Divide {
+public class Math {
 }

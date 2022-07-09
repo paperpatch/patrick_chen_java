@@ -14,21 +14,21 @@ import java.util.Random;
 @RestController
 public class MonthController {
 
-    private static int idCounter = 1;
+    private static int num = 1;
 
     private static List<Month> monthList = new ArrayList<>(Arrays.asList(
-            new Month("January", idCounter++),
-            new Month("February", idCounter++),
-            new Month("March", idCounter++),
-            new Month("April", idCounter++),
-            new Month("May", idCounter++),
-            new Month("June", idCounter++),
-            new Month("July", idCounter++),
-            new Month("August", idCounter++),
-            new Month("September", idCounter++),
-            new Month("October", idCounter++),
-            new Month("November", idCounter++),
-            new Month("December", idCounter++)
+            new Month("January", num++),
+            new Month("February", num++),
+            new Month("March", num++),
+            new Month("April", num++),
+            new Month("May", num++),
+            new Month("June", num++),
+            new Month("July", num++),
+            new Month("August", num++),
+            new Month("September", num++),
+            new Month("October", num++),
+            new Month("November", num++),
+            new Month("December", num++)
     ));
 
     @RequestMapping(value="/month/{monthNumber}", method= RequestMethod.GET)
