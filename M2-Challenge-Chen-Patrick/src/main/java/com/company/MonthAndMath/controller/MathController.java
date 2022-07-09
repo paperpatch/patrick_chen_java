@@ -1,15 +1,40 @@
 package com.company.MonthAndMath.controller;
 
+import com.company.MonthAndMath.models.Math;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class MathController {
+
     @RequestMapping(value="/add", method= RequestMethod.POST)
     @ResponseStatus(HttpStatus.CREATED)
+    public Math add(@RequestBody Math math) {
+        math.setAnswer(math.getOperand1() + math.getOperand2());
+        return math;
+    }
 
+    @RequestMapping(value="/subtract", method= RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Math subtract(@RequestBody Math math) {
+        math.setAnswer(math.getOperand1() - math.getOperand2());
+        return math;
+    }
 
-    public int add(@RequestBody int operand1, int operand2) {
-        return operand1 + operand2;
+    @RequestMapping(value="/multiply", method= RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Math multiply(@RequestBody Math math) {
+        math.setAnswer(math.getOperand1() * math.getOperand2());
+        return math;
+    }
+
+    @RequestMapping(value="/divide", method= RequestMethod.POST)
+    @ResponseStatus(HttpStatus.CREATED)
+    public Math divide(@RequestBody Math math) {
+        math.setAnswer(math.getOperand1() / math.getOperand2());
+        if (math.getOperand2() == 0) {
+            throw new IllegalArgumentException("Denominator cannot be zero.");
+        }
+        return math;
     }
 }
