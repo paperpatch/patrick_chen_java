@@ -61,12 +61,11 @@ public class MonthControllerTest {
 
     @Test
     public void shouldReturnAValueFromMonthList() throws Exception {
-        Month outputMonth = new Month();
-        String outputJson = mapper.writeValueAsString(outputMonth);
         mockMvc.perform(get("/randomMonth"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().json(outputJson));
+                .andExpect(jsonPath("$.number").isNotEmpty())
+                .andExpect(jsonPath("$.month").isNotEmpty());
     }
 
 }
