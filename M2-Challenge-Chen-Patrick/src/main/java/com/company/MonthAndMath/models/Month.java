@@ -2,23 +2,23 @@ package com.company.MonthAndMath.models;
 
 import java.util.Objects;
 
-public class RandomMonth {
-    private int id;
+public class Month {
+    private int number;
     private String month;
 
-    public RandomMonth() {
+    public Month() {
     }
-    public RandomMonth(String month, int id) {
-        this.id = id;
+    public Month(String month, int number) {
+        this.number = number;
         this.month = month;
     }
 
     public int getId() {
-        return id;
+        return number;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int number) {
+        this.number = number;
     }
 
     public String getMonth() {
@@ -33,19 +33,19 @@ public class RandomMonth {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        RandomMonth that = (RandomMonth) o;
-        return id == that.id && Objects.equals(month, that.month);
+        Month that = (Month) o;
+        return number == that.number && Objects.equals(month, that.month);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, month);
+        return Objects.hash(number, month);
     }
 
     @Override
     public String toString() {
         return "RandomMonth{" +
-                "id=" + id +
+                "number=" + number +
                 ", month='" + month + '\'' +
                 '}';
     }
