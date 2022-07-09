@@ -1,34 +1,35 @@
 package com.company.MonthAndMath.models;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import java.util.Objects;
 
 public class Math {
-    private int operand1;
-    private int operand2;
+
+    // Made operand1 and operand 2 to Strings in order to validate whether parameter is empty.
+    @NotEmpty(message = "You must supply a value for operand1.")
+    private String operand1;
+    @NotEmpty(message = "You must supply a value for operand2.")
+    private String operand2;
     private int answer;
 
     public Math() {
     }
 
-    public Math(int operand1, int operand2, int answer) {
-        this.operand1 = operand1;
-        this.operand2 = operand2;
-        this.answer = answer;
-    }
-
-    public int getOperand1() {
+    public String getOperand1() {
         return operand1;
     }
 
-    public void setOperand1(int operand1) {
+    public void setOperand1(String operand1) {
         this.operand1 = operand1;
     }
 
-    public int getOperand2() {
+    public String getOperand2() {
         return operand2;
     }
 
-    public void setOperand2(int operand2) {
+    public void setOperand2(String operand2) {
         this.operand2 = operand2;
     }
 
@@ -45,7 +46,7 @@ public class Math {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Math math = (Math) o;
-        return operand1 == math.operand1 && operand2 == math.operand2 && answer == math.answer;
+        return answer == math.answer && Objects.equals(operand1, math.operand1) && Objects.equals(operand2, math.operand2);
     }
 
     @Override
@@ -56,8 +57,8 @@ public class Math {
     @Override
     public String toString() {
         return "Math{" +
-                "operand1=" + operand1 +
-                ", operand2=" + operand2 +
+                "operand1='" + operand1 + '\'' +
+                ", operand2='" + operand2 + '\'' +
                 ", answer=" + answer +
                 '}';
     }
