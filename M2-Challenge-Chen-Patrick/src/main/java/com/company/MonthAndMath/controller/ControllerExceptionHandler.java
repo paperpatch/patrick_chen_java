@@ -56,6 +56,7 @@ public class ControllerExceptionHandler {
     }
 
     // Added this error handling to provide the 422 error in the test.
+    // guide: https://www.toptal.com/java/spring-boot-rest-api-error-handling
     @ExceptionHandler(value = HttpMessageNotReadableException.class)
     @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
     public ResponseEntity<CustomErrorResponse> notIntegerException(HttpMessageNotReadableException e) {
