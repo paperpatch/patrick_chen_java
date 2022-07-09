@@ -1,7 +1,6 @@
 package com.company.MonthAndMath.controller;
 
-import com.company.MonthAndMath.models.Month;
-import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,14 +13,17 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
-// originally written in the Cognizant 05-stu-month-converter
+// originally written in the Cognizant 05-stu-month-converter and tweaked.
 @RunWith(SpringRunner.class)
 @WebMvcTest(MonthController.class)
 public class MonthControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
-    private ObjectMapper mapper = new ObjectMapper();
+    @Before
+    public void setUp() throws Exception {
+
+    }
 
     @Test
     public void contextLoads() {
@@ -31,9 +33,8 @@ public class MonthControllerTest {
     public void shouldReturnMonthOnValidGetRequest() throws Exception {
         String outputJson = "August";
 
-        mockMvc.perform(
-                        get("/month/8")
-                                .contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(get("/month/8")
+                        .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -42,9 +43,8 @@ public class MonthControllerTest {
 
     @Test
     public void shouldReturn422ForInvalidMonthId() throws Exception {
-        mockMvc.perform(
-                        get("/month/999")
-                                .contentType(MediaType.APPLICATION_JSON)
+        mockMvc.perform(get("/month/999")
+                        .contentType(MediaType.APPLICATION_JSON)
                 )
                 .andDo(print())
                 .andExpect(status().isUnprocessableEntity());
