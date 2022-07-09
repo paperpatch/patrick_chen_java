@@ -13,11 +13,11 @@ public class Month {
         this.month = month;
     }
 
-    public int getId() {
+    public int getNumber() {
         return number;
     }
 
-    public void setId(int number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -33,8 +33,8 @@ public class Month {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Month that = (Month) o;
-        return number == that.number && Objects.equals(month, that.month);
+        Month month1 = (Month) o;
+        return number == month1.number && Objects.equals(month, month1.month);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class Month {
 
     @Override
     public String toString() {
-        return "RandomMonth{" +
+        return "Month{" +
                 "number=" + number +
                 ", month='" + month + '\'' +
                 '}';
