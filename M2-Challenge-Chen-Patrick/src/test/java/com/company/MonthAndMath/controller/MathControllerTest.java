@@ -66,6 +66,23 @@ public class MathControllerTest {
 
     @Test
     public void shouldReturn422ErrorWithInvalidAddRequest() throws Exception {
+        Math input = new Math();
+        input.setOperand1("String");
+        input.setOperand2("2");
+        String inputJson = mapper.writeValueAsString(input);
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/add")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    // This was originally written to accommodate operand1 and operand2 being types 'int' instead of 'String'.
+    @Test
+    public void shouldReturn422ErrorWithInvalidAddRequestUsingMapAndHttpRequest() throws Exception {
         // Could not directly use string for int as Java prevents .setOperand1("String");
         // Used Map/HashMap to work around the restriction.
         Map<String, String> inputMap = new HashMap<>();
@@ -108,6 +125,22 @@ public class MathControllerTest {
 
     @Test
     public void shouldReturn422ErrorWithInvalidSubtractRequest() throws Exception {
+        Math input = new Math();
+        input.setOperand1("String");
+        input.setOperand2("2");
+        String inputJson = mapper.writeValueAsString(input);
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/subtract")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturn422ErrorWithInvalidSubtractRequestUsingMapAndHttpRequest() throws Exception {
         // Could not directly use string for int as Java prevents .setOperand1("String");
         // Used Map/HashMap to work around the restriction.
         Map<String, String> inputMap = new HashMap<>();
@@ -150,6 +183,22 @@ public class MathControllerTest {
 
     @Test
     public void shouldReturn422ErrorWithInvalidMultiplyRequest() throws Exception {
+        Math input = new Math();
+        input.setOperand1("String");
+        input.setOperand2("2");
+        String inputJson = mapper.writeValueAsString(input);
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/multiply")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturn422ErrorWithInvalidMultiplyRequestUsingMapAndHttpRequest() throws Exception {
         // Could not directly use string for int as Java prevents .setOperand1("String");
         // Used Map/HashMap to work around the restriction.
         Map<String, String> inputMap = new HashMap<>();
@@ -192,6 +241,22 @@ public class MathControllerTest {
 
     @Test
     public void shouldReturn422ErrorWithInvalidDivideRequest() throws Exception {
+        Math input = new Math();
+        input.setOperand1("String");
+        input.setOperand2("2");
+        String inputJson = mapper.writeValueAsString(input);
+
+        mockMvc.perform(
+                        MockMvcRequestBuilders.post("/divide")
+                                .content(inputJson)
+                                .contentType(MediaType.APPLICATION_JSON)
+                )
+                .andDo(print())
+                .andExpect(status().isUnprocessableEntity());
+    }
+
+    @Test
+    public void shouldReturn422ErrorWithInvalidDivideRequestUsingMapAndHttpRequest() throws Exception {
         // Could not directly use string for int as Java prevents .setOperand1("String");
         // Used Map/HashMap to work around the restriction.
         Map<String, String> inputMap = new HashMap<>();
