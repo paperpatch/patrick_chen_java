@@ -44,14 +44,14 @@ public class MathControllerTest {
     @Test
     public void shouldReturnPositiveIntegersWhenAddingTwoPositiveIntegers() throws Exception {
         Math output = new Math();
-        output.setOperand1(1);
-        output.setOperand2(2);
+        output.setOperand1("1");
+        output.setOperand2("2");
         output.setAnswer(3);
         String outputJson = mapper.writeValueAsString(output);
 
         Math input = new Math();
-        input.setOperand1(1);
-        input.setOperand2(2);
+        input.setOperand1("1");
+        input.setOperand2("2");
         String inputJson = mapper.writeValueAsString(input);
 
         mockMvc.perform(
@@ -86,14 +86,14 @@ public class MathControllerTest {
     @Test
     public void shouldReturnOutputWhenSubtractingTwoIntegers() throws Exception {
         Math output = new Math();
-        output.setOperand1(4);
-        output.setOperand2(3);
+        output.setOperand1("4");
+        output.setOperand2("3");
         output.setAnswer(1);
         String outputJson = mapper.writeValueAsString(output);
 
         Math input = new Math();
-        input.setOperand1(4);
-        input.setOperand2(3);
+        input.setOperand1("4");
+        input.setOperand2("3");
         String inputJson = mapper.writeValueAsString(input);
 
         mockMvc.perform(
@@ -128,14 +128,14 @@ public class MathControllerTest {
     @Test
     public void shouldReturnOutputValueWhenMultiplyingTwoPositiveIntegers() throws Exception {
         Math output = new Math();
-        output.setOperand1(7);
-        output.setOperand2(3);
+        output.setOperand1("7");
+        output.setOperand2("3");
         output.setAnswer(21);
         String outputJson = mapper.writeValueAsString(output);
 
         Math input = new Math();
-        input.setOperand1(7);
-        input.setOperand2(3);
+        input.setOperand1("7");
+        input.setOperand2("3");
         String inputJson = mapper.writeValueAsString(input);
 
         mockMvc.perform(
@@ -170,14 +170,14 @@ public class MathControllerTest {
     @Test
     public void shouldReturnOutputValueWhenDividingTwoPositiveIntegers() throws Exception {
         Math output = new Math();
-        output.setOperand1(6);
-        output.setOperand2(3);
+        output.setOperand1("6");
+        output.setOperand2("3");
         output.setAnswer(2);
         String outputJson = mapper.writeValueAsString(output);
 
         Math input = new Math();
-        input.setOperand1(6);
-        input.setOperand2(3);
+        input.setOperand1("6");
+        input.setOperand2("3");
         String inputJson = mapper.writeValueAsString(input);
 
         mockMvc.perform(
