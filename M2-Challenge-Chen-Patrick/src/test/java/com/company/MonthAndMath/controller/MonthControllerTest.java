@@ -1,5 +1,7 @@
 package com.company.MonthAndMath.controller;
 
+import com.company.MonthAndMath.models.Month;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -20,6 +22,8 @@ public class MonthControllerTest {
     @Autowired
     private MockMvc mockMvc;
 
+    private ObjectMapper mapper = new ObjectMapper();
+
     @Before
     public void setUp() throws Exception {
 
@@ -31,7 +35,10 @@ public class MonthControllerTest {
 
     @Test
     public void shouldReturnMonthOnValidGetRequest() throws Exception {
-        String outputJson = "August";
+        Month output = new Month();
+        output.setMonth("August");
+        output.setNumber(8);
+        String outputJson = mapper.writeValueAsString(output);
 
         mockMvc.perform(get("/month/8")
                         .contentType(MediaType.APPLICATION_JSON)
