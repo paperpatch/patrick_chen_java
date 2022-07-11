@@ -33,33 +33,58 @@ public class MonthController {
 
     @RequestMapping(value="/month/{monthNumber}", method= RequestMethod.GET)
     @ResponseStatus(HttpStatus.OK)
-    public String getMonth(@PathVariable String monthNumber) {
+    public Month getMonth(@PathVariable String monthNumber) {
+        Month month = new Month();
 
         switch (monthNumber) {
             case "1":
-                return "January";
+                month.setNumber(1);
+                month.setMonth("January");
+                return month;
             case "2":
-                return "February";
+                month.setNumber(2);
+                month.setMonth("February");
+                return month;
             case "3":
-                return "March";
+                month.setNumber(3);
+                month.setMonth("March");
+                return month;
             case "4":
-                return "April";
+                month.setNumber(4);
+                month.setMonth("April");
+                return month;
             case "5":
-                return "May";
+                month.setNumber(5);
+                month.setMonth("May");
+                return month;
             case "6":
-                return "June";
+                month.setNumber(6);
+                month.setMonth("June");
+                return month;
             case "7":
-                return "July";
+                month.setNumber(7);
+                month.setMonth("July");
+                return month;
             case "8":
-                return "August";
+                month.setNumber(8);
+                month.setMonth("August");
+                return month;
             case "9":
-                return "September";
+                month.setNumber(9);
+                month.setMonth("September");
+                return month;
             case "10":
-                return "October";
+                month.setNumber(10);
+                month.setMonth("October");
+                return month;
             case "11":
-                return "November";
+                month.setNumber(11);
+                month.setMonth("November");
+                return month;
             case "12":
-                return "December";
+                month.setNumber(12);
+                month.setMonth("December");
+                return month;
             default:
                 throw new ResponseStatusException(HttpStatus.UNPROCESSABLE_ENTITY, "Invalid Month Number Specified");
         }
